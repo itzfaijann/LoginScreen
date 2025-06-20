@@ -1,101 +1,124 @@
-echo. > README.md && (
-echo # 🚀 React Native Login & Welcome App
-echo.
-echo ## 📖 How to Get Started
-echo.
-echo This project was built with [React Native CLI](https://github.com/itzfaijann/LoginScreen). Follow the steps below to set it up and run locally:
-echo.
-echo ### 1. Install dependencies
-echo ^```
-echo npm install
-echo ^```
-echo.
-echo ### 2. Start Metro Bundler
-echo ^```
-echo npm start
-echo ^```
-echo.
-echo ### 3. Run the app
-echo.
-echo For Android:
-echo ^```
-echo npm run android
-echo ^```
-echo.
-echo For iOS (macOS only):
-echo ^```
-echo cd ios
-echo pod install
-echo cd ..
-echo npm run ios
-echo ^```
-echo.
-echo ---
-echo.
-echo ## 📱 Features
-echo - 🎨 Clean ^& modern UI (Welcome + Login screens)
-echo - 🔐 Local credential check using `user.js`
-echo - 📐 Responsive design with `moderateScale()` and `fontSize()`
-echo - 🚀 Built using React Native CLI (not Expo)
-echo.
-echo ---
-echo.
-echo ## 📂 Folder Structure
-echo ^```
-echo .
-echo ├── App.js
-     |__ Navigation.js
-echo ├── screens/
-echo │   ├── intro.js
-echo │   └── Login.js
-echo ├── src/
-echo │   └── data/
-echo │       └── user.js
-echo ├── logo/
-echo │   └── logo.png
-echo ├── utils/
-echo │   └── metrix.js
-echo ^```
-echo.
-echo ---
-echo.
-echo ## 🔑 Test Credentials
-echo.
-echo Use the following email ^& password on the Login screen:
-echo ^```
-echo Email:    faijan@gmail.com
-echo Password: faijan@123
-echo ^```
-echo.
-echo ---
-echo.
-echo ## 📌 Navigation Setup
-echo.
-echo Your `App.js` should include navigation like:
-echo ^```
-echo <NavigationContainer>
-echo   <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
-echo     <Stack.Screen name="Welcome" component={Welcome} />
-echo     <Stack.Screen name="Login" component={Login} />
-echo   </Stack.Navigator>
-echo </NavigationContainer>
-echo ^```
-echo.
-echo ---
-echo.
-echo ## 🧠 Learn More
-echo - [React Native Docs](https://reactnative.dev)
-echo - [Navigation Docs](https://reactnavigation.org)
-echo - [StyleSheet API](https://reactnative.dev/docs/stylesheet)
-echo.
-echo ---
-echo.
-echo ## 🙌 Acknowledgements
-echo - Built with ❤️ by Mohmmed Faijan
-echo - UI inspired by assessment tasks
-echo.
-echo ---
-echo.
-echo ## 📄 License
-echo This project is for learning and practice purposes only.
-) >> README.md
+@"
+# ✅ LoginScreen App - React Native CLI
+
+A sleek, responsive **Login + Welcome UI** app built using **React Native CLI**.  
+This app features a local credential check using `user.js`, clean design, and responsive styling.
+
+---
+
+## 🧑‍💻 How to Run This App
+
+### ✅ Requirements
+
+- Node.js
+- Android Studio / Emulator
+- React Native CLI
+- Git
+
+---
+
+### 📦 Steps
+
+\`\`\`bash
+# 1. Clone the repo
+git clone https://github.com/itzfaijann/LoginScreen
+cd LoginScreen
+
+# 2. Install dependencies
+npm install
+
+# 3. Start Metro
+npm start
+
+# 4. Run on Android
+npm run android
+\`\`\`
+
+---
+
+## 🚀 Features
+
+- 🖼️ Welcome screen with logo  
+- 🔐 Login screen with email/password input  
+- ✅ Hardcoded credential validation  
+- 📏 Responsive layout using \`moderateScale()\` and \`fontSize()\`  
+- 🧭 Navigation configured via \`src/Navigation.js\`  
+- 🎨 Modern UI with rounded inputs and blue primary theme  
+
+---
+
+## 📁 Folder Structure
+
+\`\`\`
+.
+├── App.js
+├── logo/
+│   └── logo.png
+├── screens/
+│   ├── Welcome.js
+│   └── Login.js
+├── src/
+│   ├── Navigation.js
+│   └── data/
+│       └── user.js
+├── utils/
+│   └── metrix.js
+\`\`\`
+
+---
+
+## 🔑 Test Credentials
+
+\`\`\`txt
+email:    faijan@gmail.com  
+password: faijan@123
+\`\`\`
+
+---
+
+## 📌 Navigation Setup
+
+Navigation is handled inside:
+
+\`\`\`js
+// src/Navigation.js
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Welcome from '../screens/Welcome';
+import Login from '../screens/Login';
+
+export default function Navigation() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Welcome" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Welcome" component={Welcome} />
+        <Stack.Screen name="Login" component={Login} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+\`\`\`
+
+---
+
+## ⚠️ Common Errors
+
+| Error                   | Solution                        |
+|------------------------|----------------------------------|
+| Metro not starting     | Run: \`npm start\`                 |
+| Build fails on android | Ensure emulator is running       |
+| Credentials not working| Check your \`user.js\` file values |
+
+---
+
+## 🧑‍💻 Author
+
+**Mohmmed Faijan**  
+🔗 GitHub: [https://github.com/itzfaijann](https://github.com/itzfaijann)
+
+---
+
+## 📄 License
+
+This project is for personal learning and UI practice.
+"@ > README.md
